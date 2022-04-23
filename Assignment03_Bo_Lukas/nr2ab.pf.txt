@@ -1,0 +1,64 @@
+﻿#<
+Author: Boyue, Lukas
+Creates an array and fills it with all num
+from 1 to a given number
+@param maximum given number
+@return an array with all numbers form 1 to maximum 
+>#
+fill-array: (maximum :Int -> :Arr) {
+    maximum { 1 + }  array
+}fun
+
+#<
+takes a list and removes the the given number and it multipels
+@param inArray 
+@param num 
+@return 
+>#
+remove-item-on: (inArray :Arr num :Int -> :Arr) {
+    [] outArray!
+    inArray
+    {
+        index! var!
+        index 1 + index!
+        index num mod 0 != {
+            outArray var append outArray!
+        }if
+    } fori
+    outArray
+}fun
+
+#<
+Function to siev out the lucky numbers
+@param n celing
+@return an array of said lucky numbers
+>#
+lucky-numbers: (n :Int -> :Arr) {
+    n fill-array list!
+    [1] output!
+    2 current!
+    1 pos!
+
+    n n ln / ceil g! #number of lucky numbers
+
+    list current remove-item-on list!
+
+    {
+        list .pos current!
+        list current remove-item-on list!
+        output current append output! 
+        pos g = breakif
+        pos 1 + pos!
+        
+    } loop
+    output
+}fun
+
+100 lucky-numbers
+
+#
+#100 fill-array
+#2 remove-item-on
+#3 remove-item-on
+#7 remove-item-on
+#9 remove-item-on

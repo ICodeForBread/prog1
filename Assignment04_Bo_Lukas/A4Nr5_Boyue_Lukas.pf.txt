@@ -1,0 +1,178 @@
+﻿#Author: Boyue, Lukas
+#Datastructure List: Compare Slides.
+List: {                          # A list is either
+  Null: ()                       # empty or
+  Cons: (value :Obj, rest :List) # a value and a list.
+} datadef
+
+#<
+Returns the length of a given list. Recursive function.
+@param list     List. 
+@return         Length of the list. 0 if list is empty.
+>#
+list-length: (list :List -> :Int) {
+    { list null? } { 0 }
+    { list cons? } { list cons-rest list-length 1 + }
+} cond-fun
+
+#<
+Prints a given list. Format: [ 1. Element ] -> [ 2. Element ] -> ... -> [ null ]
+@param list     List, that should be printed on the standard output.
+>#
+print-list: (list :List) {
+    { list null? } { "[ null ]" println  }
+    { list cons? } { "[ " list cons-value + " ] -> " + print list cons-rest print-list}
+} cond-fun
+
+
+#from no.3
+l_fromarray: (a :Arr -> :List) {
+    null
+    a
+    {
+        swap cons
+    } for
+} fun
+
+l_toarray: (list :List -> :Arr) {
+    [] output!
+    {
+        {list .1 :Null =} { output }
+        {list .1 :Cons =} {
+            output list cons-value append output!
+            #remove first item on list
+            list cons-rest list!
+            output list recur + output!
+            output
+        }
+        {true} {"something went wrong! not null or Cons" err}
+    } cond
+} fun
+
+reverse-list: (inList :List -> :List) {
+    inList l_toarray
+
+    l_fromarray
+} fun
+
+#todo:
+#split list to two lists
+split-list: (list :List -> :List, :List) {
+    list list-length 2 / ceil halfList!
+    null list-A! null list-B!
+    1 pos!
+    {
+        {
+            {list null?} {break}
+            {pos halfList <=} {
+                list cons-value list-A cons list-A!
+            }
+            {pos halfList >} {
+                list cons-value list-B cons list-B!
+            }
+        } cond         
+        pos 1 + pos!
+        list cons-rest list!        
+    } loop
+    list-A reverse-list list-B reverse-list
+} fun
+
+split-list-recursiv: (list :List) {
+    list split-list a! b!
+    a cons-rest null? not {
+        a recur
+    } {
+        a
+    } if
+
+    b cons-rest null? not {
+        b recur
+    } {
+        b
+    } if
+}fun
+
+#todo:
+#test split-list function
+[["A" "B"] l_fromarray split-list] [[ :datadef :Cons "B" [ :datadef :Null ] ] 
+                                    [ :datadef :Cons "A" [ :datadef :Null ] ]
+                                   ] test=
+
+#todo:
+#merge two lists to one
+merge-list: (list-A :List, list-B :List -> :List) {
+    null outList!
+    {
+        {
+            {list-A null? list-B null? and} { break } #beide listen leer = fertig
+            {list-A null?} { # liste a leer = b hinzufügen und ende
+                list-B cons-value #wert von b an der ersten stelle
+                outList cons outList!
+                list-B cons-rest list-B!
+            }
+            {list-B null?} { # liste b leer = a hinzufügen und ende
+                list-A cons-value #wert von b an der ersten stelle
+                outList cons outList!
+                list-A cons-rest list-A!
+            }
+            {list-A cons-value list-B cons-value >=} { # a >= b -> a auf outlist hinzufügen und aus restliste entfernen
+                list-A cons-value outList cons outList!
+                list-A cons-rest list-A!
+            }
+            {list-A cons-value list-B cons-value <} { # b > a -> b auf outlist hinzufügen und aus restliste entfernen
+                list-B cons-value outList cons outList!
+                list-B cons-rest list-B!
+            }
+        } cond       
+    } loop
+    outList
+} fun
+
+merge-list-recursiv: (inArr :Arr -> :Arr) {
+    inArr length 1 = {
+        inArr output!
+    } {
+        [] output!
+        inArr
+            {
+                i! v!
+                {
+                    {i 2 mod 1 =} {
+                        output
+                        v #list 1
+                        inArr i 1 - get #list 2
+                        merge-list #combines lists
+                        reverse-list 
+                        append output!
+                    }
+                    {i inArr length 1 - =} { output v append output!}
+                } cond
+            } fori
+            output recur output!
+    } if
+    output
+} fun
+
+#todo:
+#test merge function
+
+#todo:
+#recursive merge sort
+merge-sort: (inList :List) {
+    [inList split-list-recursiv] merge-list-recursiv .0 reverse-list
+} fun
+
+#todo:
+#test merge-sort function
+
+#todo: call test functions
+#split-list-test
+#merge-test
+#merge-sort-test
+test-stats
+
+["C" "B" "A" "G" "E" "I" "H" "J" "F" "B" "D"] l_fromarray
+merge-sort print-list
+
+#< 5d) the recursiv lists are not efficient. it would be more efficient to use arrays
+># 

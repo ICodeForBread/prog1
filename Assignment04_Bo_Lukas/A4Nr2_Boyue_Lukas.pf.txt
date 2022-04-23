@@ -1,0 +1,79 @@
+﻿#<
+Author: Boyue, Lukas
+In einem Programm sollen verschiedene Formen von geometrischen Körpern, nämlich
+Zylinder, Kugel und Quader, repräsentiert werden. Entwickeln Sie eine Funktion,
+die diese geometrischen Körper vararbeiten kann (Parametertyp: Shape) und das
+zugehörige Volumen berechnet.
+>#
+
+# Verwenden Sie das "recipe for variant data"
+
+Shape: {
+    # todo: define variants
+    Cylinder: (radius :Num, heigth :Num) # pi * r ^2 * h
+    Sphere: (radius :Num) # 4/3 * pi * r^3
+    Cuboid: (a :Num, b :Num, c :Num)
+} datadef
+
+# todo: implementieren Sie die Funktion zur Volumenberechnung
+volume: (shape :Shape -> :Num) {
+    {shape cylinder?} {
+        shape .2 radius!
+        shape .3 height!
+
+        radius radius * PI * height *
+    }
+
+    {shape sphere?} {
+        shape .2 radius!
+        radius radius radius * * radius3!
+
+        4 3 / PI * radius3 *
+    }
+
+    {shape cuboid?} {
+        shape .2 a!
+        shape .3 b!
+        shape .4 c!
+
+        a b c * *
+    }
+}cond-fun
+
+# todo: implementieren Sie die Testfunktion
+cylinder?: (p :Obj -> :Bool) {
+    p .1 :Cylinder = {
+        true
+    } {
+        false
+    } if
+} fun
+
+sphere?: (p :Obj -> :Bool) {
+    p .1 :Sphere = {
+        true
+    } {
+        false
+    } if
+} fun
+
+cuboid?: (p :Obj -> :Bool) {
+    p .1 :Cuboid = {
+        true
+    } {
+        false
+    } if
+} fun
+
+# todo: rufen Sie die Testfunktion auf
+
+volume-test: {
+    0.01 eps!
+    3 5 cylinder volume 141.37 eps test~=
+    5 sphere volume 523.59 eps test~=
+    3 4 5 cuboid volume 60 eps test~=
+} fun
+
+volume-test
+test-stats
+

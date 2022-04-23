@@ -1,0 +1,35 @@
+﻿#<
+Author: Boyue, Lukas
+Write a function named "vehicle-speed" that computes the speed of a vehicle (in km/h) depending on the gear (1, 2, 3, or 4) and the motor-speed (in rpm, rounds-per-minute). The vehicle speed at 2500 rpm is 10 km/h in gear 1, 30 km/h in gear 2, 50 km/h in gear 3, and 100 km/h in gear 4. In each gear the speed linearly depends on the motor speed.
+>#
+
+# todo: write purpose statement (function documentation)
+vehicle-speed: (motor-speed :Num, gear :Num -> :Num) {
+    # increase in kmh per one more turn
+    0.004 kmh-per-U1! #gear 1
+    0.012 kmh-per-U2! #gear 2
+    0.02 kmh-per-U3! #gear 3
+    0.04 kmh-per-U4! #gear 4
+
+    {
+        {gear 1 =} {motor-speed kmh-per-U1 *}
+        {gear 2 =} {motor-speed kmh-per-U2 *}
+        {gear 3 =} {motor-speed kmh-per-U3 *}
+        {gear 4 =} {motor-speed kmh-per-U4 *}
+    }cond
+} fun
+
+linear-test: {
+    0.1 eps!
+    1234 1 vehicle-speed 4.94 eps test~=
+    2500 1 vehicle-speed 10 eps test~=
+    2500 2 vehicle-speed 30 eps test~=
+    2500 3 vehicle-speed 50 eps test~=
+    2500 4 vehicle-speed 100 eps test~=
+    3500 3 vehicle-speed 70 eps test~=
+    3500 4 vehicle-speed 140 eps test~=
+    9999 4 vehicle-speed 399.96 eps test~=
+    test-stats
+} fun
+
+linear-test

@@ -1,0 +1,122 @@
+﻿#Author: Boyue, Lukas
+# data definition
+List: {                            # A list is either
+    Null: ()                       # empty or
+    Pair: (first :Obj, rest :List) # a first element followed by a rest-list.
+} datadef
+
+# a) todo: implement and write purpose statement
+#<
+A function to make a list of items with only one item
+@param element the element to put on the list
+@return the list
+>#
+l_new: (element :Obj -> :List) {
+    element null pair
+} fun
+
+# b) todo: implement and write purpose statement
+#<
+adds an element infront of the list
+@param list 
+@param element what to add
+@return list with element in fornt
+>#
+l_prepend: (list :List element :Obj -> :List) {
+    element list pair
+} fun
+
+# c) todo: implement and write purpose statement
+#<
+turns a list into an array
+@param list the list that is going to be turned
+@return array with all the items in the list
+>#
+l_toarray: (list :List -> :Arr) {
+    [] output!
+    {
+        {list .1 :Null =} { output }
+        {list .1 :Pair =} {
+            output list .2 append output!
+            #remove first item on list
+            list .3 list!
+            output list recur + output!
+            output
+        }
+        {true} {"something went wrong! not null or pair" err}
+    } cond
+} fun
+
+# c) todo: implement and write purpose statement
+#<
+takes an array and turns it into a recursiv list
+@param a input array of items
+@return the list
+>#
+l_fromarray: (a :Arr -> :List) {
+    null
+    a reverse
+    {
+        l_prepend
+    } for
+} fun
+
+test-basic-functions: {
+    # creation of a list
+    0 l_new
+    l_toarray [0] test=
+
+    # prepending elements
+    0 l_new
+    1 l_prepend
+    2 l_prepend
+    l_toarray [2 1 0] test=
+
+    # identity: l_fromarray -> l_toarray must yield identical result
+    [1 2 3 4 5 6] dup l_fromarray l_toarray test=
+} fun
+
+# d) todo: implement and write purpose statement
+#<
+checks if at least on item on the list is a string
+@param list the list to check
+@return true if a string is in the list flase if not
+>#
+l_hasstring: (list :List -> :Bool) {
+    {
+        {list .1 :Null =} { false }
+        {list .2 str?} { true }
+        {true} {
+            list .3
+            recur
+        }
+    } cond
+} fun
+
+# e) todo: implement and write purpose statement
+#<
+Sums up all items in the list to one number
+@param list of the numbers that gets sumed up
+@return sum
+>#
+l_sum: (list :List -> :Num) {
+    {
+        {list .1 :Null =} { 0 }
+        {list .2 num?} {list .2 list .3 recur + }
+        {true} {"list contains item that is not a number" err}
+    } cond
+} fun
+
+test-advanced-functions: {
+    [] l_fromarray l_hasstring false test=
+    [2 3 5 10] l_fromarray l_hasstring false test=
+    ["2" 3 5 10] l_fromarray l_hasstring true test=
+    ["2" 3 5 "10"] l_fromarray l_hasstring true test=
+
+    [] l_fromarray l_sum 0 test=
+    [2 3 5 10] l_fromarray l_sum 20 test=
+} fun
+
+test-basic-functions
+test-advanced-functions
+test-stats

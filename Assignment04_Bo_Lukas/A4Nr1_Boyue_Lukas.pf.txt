@@ -1,0 +1,78 @@
+﻿#<
+Author: Boyue, Lukas
+Entwickeln Sie Programm zur Erstellung von Text-Statistiken. Eingabe der Funktion ist
+eine Zeichenkette beliebiger Länge. Ausgabe ist eine statistische Zusammenfassung der
+Zeichenkette, mit folgenden Komponenten: Anzahl Zeichen (inkl. Leerraum), Anzahl
+Buchstaben (a-z bzw. A-Z), Anzahl Ziffern (0-9)),
+Anzahl Sätze (Sätzen enden mit „.“, „!“ oder „?“) und Anzahl Zeilen. Zum Leerraum
+(whitespace) gehören folgende Steuerzeichen: Leerzeichen (" "), Tabulator ("\t"),
+Zeilenvorschub ("\n") und Wagenrücklauf ("\n"). Im Eingabetext erlaubt sind Zeichen
+mit einem ASCII-Code zwischen 32 (Leerzeichen) und 126 (Tilde) sowie Leerraum (also
+insbesondere sind keine Umlaute erlaubt).
+>#
+
+# The data definition of text statistics.
+Stats: (
+    chars :Int
+    letters :Int
+    digits :Int
+    lines :Int
+    sentences :Int
+) datadef
+
+# Returns true if c is a digit (0-9).
+digit?: (c :Str -> :Bool){
+    c str->chars .0 x!
+    x 48 >= x 57 <= and {
+        true
+    } {
+        false
+    } if
+}fun
+
+# Returns true if c is a letter (a-z or A-Z).
+letter?: (c :Str -> :Bool) {
+    c str->chars .0 x!
+    x 65 >= x 90 <= and x 97 >= x 122 <= and or {
+        true
+    } {
+        false
+    } if
+} fun
+
+# Counts the number of characters for which the predicate proc returns true.
+# The predicate has the signature: proc: (c :Int -> :Bool)
+count: (s :Str, proc :ExeArr -> :Int) {
+    # todo: implement using a PostFix for-loop over s
+    0 count!
+    s
+    {
+        #c! might not need this
+        proc {
+            count 1 + count!
+        }
+    } for
+} fun
+
+# Computes text statistics given a text string.
+text-stats: (text :Str -> :Stats) {
+    # todo: compute each component value for text using count and letter?
+    # todo: you may define other helper functions if necessary
+    # note: the ASCII code of a character can be obtained like this:  "a" str->chars .0 ==> 97
+    # todo: return stats at the end 
+    0 0 0 0 0 stats # chars letters digits lines sentences stats
+} fun
+
+text-stats-test: {
+    # chars letters digits lines sentences stats
+    "hello 5" text-stats, 7 5 1 1 0 stats, test=
+    "hello world" text-stats, 11 10 0 1 0 stats, test=
+    "Hello! How are you?" text-stats, 19 14 0 1 2 stats, test=
+    "Hello!\nHow are you?" text-stats, 19 14 0 2 2 stats, test=
+    "Hello!\n\nHow are you?" text-stats, 20 14 0 3 2  stats, test=
+    "1234 5678" text-stats, 9 0 8 1 0  stats, test=
+    "1234\n567890" text-stats, 11 0 10 2 0  stats, test=
+    test-stats
+} fun
+
+text-stats-test

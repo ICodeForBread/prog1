@@ -1,0 +1,30 @@
+name, wishes
+Benjamin, MyToys Holzeisenbahn, MyToys Puppenhaus mit Garten und Moebel, Nintendo Switch
+Lucy, Lego Millenium Falcon, Play-Doh Verrueckte Haufen
+Lukas, Kidisecrets, Nintendo Switch, MyToys-Collection Puppenwagen Trendy, Lego Das Disney Schloss, My Fairy Garden, Spin Master Monster Jam - Grave Digger, Play-Doh Verrueckte Haufen, Barbie und Ken Geschenkset mit Huendchen, Mattel Exklusiv Hot Wheels Doppel-Looping Wettrennen
+Ella, Nintendo Switch, MyToys Holzeisenbahn, Schleich Mobile Tieraerztin, PLAYMOBIL Polizei-Einsatzwagen, Haarkreide, Tonies 30 Lieblings-Kinderlieder, Lego Millenium Falcon, Lego Das Disney Schloss
+Konstantin, Spin Master Monster Jam - Grave Digger, Lego Millenium Falcon, Piano Matte, Barbie Meerjungfrau, PLAYMOBIL Polizei-Einsatzwagen, Schleich Mobile Tieraerztin, Barbie und Ken Geschenkset mit Huendchen, Pop up Pirate, Play-Doh Verrueckte Haufen
+Amy, MyToys Holzeisenbahn, Schleich Mobile Tieraerztin, My Fairy Garden, Haarkreide, Nintendo Switch, Spin Master Monster Jam - Grave Digger, MyToys Puppenhaus mit Garten und Moebel, Hasbro Kroko Doc, MyToys-Collection Puppenwagen Trendy
+Ben, MyToys-Collection Puppenwagen Trendy, Haarkreide, Schleich Mobile Tieraerztin, Nintendo Switch, Tonies 30 Lieblings-Kinderlieder, Hasbro Kroko Doc, PLAYMOBIL Polizei-Einsatzwagen, MyToys Puppenhaus mit Garten und Moebel, Spin Master Monster Jam - Grave Digger, Mattel Exklusiv Hot Wheels Doppel-Looping Wettrennen, Barbie und Ken Geschenkset mit Huendchen, Piano Matte, My Fairy Garden
+Emely, Kidisecrets, Lego Millenium Falcon, Barbie Meerjungfrau, Lego Das Disney Schloss, Mattel Exklusiv Hot Wheels Doppel-Looping Wettrennen, Tonies 30 Lieblings-Kinderlieder, MyToys-Collection Puppenwagen Trendy, Spin Master Monster Jam - Grave Digger
+Jonas, Barbie Meerjungfrau, MyToys Holzeisenbahn, Mattel Exklusiv Hot Wheels Doppel-Looping Wettrennen, Hasbro Kroko Doc, My Fairy Garden, Lego Das Disney Schloss, Play-Doh Verrueckte Haufen, Piano Matte, Pop up Pirate
+Finja, MyToys Puppenhaus mit Garten und Moebel, Nintendo Switch, Play-Doh Verrueckte Haufen, Hasbro Kroko Doc, Schleich Mobile Tieraerztin
+Elias, Spin Master Monster Jam - Grave Digger, My Fairy Garden, Pop up Pirate, MyToys Holzeisenbahn, Barbie Meerjungfrau, Lego Das Disney Schloss, Tonies 30 Lieblings-Kinderlieder, Play-Doh Verrueckte Haufen, Lego Millenium Falcon
+Amelie, Play-Doh Verrueckte Haufen, MyToys Puppenhaus mit Garten und Moebel, Nintendo Switch, Barbie und Ken Geschenkset mit Huendchen, My Fairy Garden, Lego Millenium Falcon
+Niklas, MyToys-Collection Puppenwagen Trendy, Barbie Meerjungfrau, Play-Doh Verrueckte Haufen, Hasbro Kroko Doc
+Luise, PLAYMOBIL Polizei-Einsatzwagen, MyToys Holzeisenbahn, Barbie Meerjungfrau, Mattel Exklusiv Hot Wheels Doppel-Looping Wettrennen, MyToys-Collection Puppenwagen Trendy, MyToys Puppenhaus mit Garten und Moebel, Hasbro Kroko Doc, Haarkreide, Barbie und Ken Geschenkset mit Huendchen, Pop up Pirate, Spin Master Monster Jam - Grave Digger, Piano Matte, My Fairy Garden, Kidisecrets
+David, Play-Doh Verrueckte Haufen, MyToys-Collection Puppenwagen Trendy, Piano Matte, MyToys Holzeisenbahn, Schleich Mobile Tieraerztin, PLAYMOBIL Polizei-Einsatzwagen, Spin Master Monster Jam - Grave Digger, Haarkreide, Barbie und Ken Geschenkset mit Huendchen, Nintendo Switch
+Frieda, Lego Das Disney Schloss, Mattel Exklusiv Hot Wheels Doppel-Looping Wettrennen
+Oskar, Schleich Mobile Tieraerztin, MyToys-Collection Puppenwagen Trendy, Lego Millenium Falcon
+Katharina, Nintendo Switch, MyToys Puppenhaus mit Garten und Moebel
+Philipp, Schleich Mobile Tieraerztin, PLAYMOBIL Polizei-Einsatzwagen, Piano Matte, Tonies 30 Lieblings-Kinderlieder, MyToys Puppenhaus mit Garten und Moebel, Mattel Exklusiv Hot Wheels Doppel-Looping Wettrennen, MyToys-Collection Puppenwagen Trendy, Haarkreide, Lego Das Disney Schloss, Pop up Pirate, Spin Master Monster Jam - Grave Digger, MyToys Holzeisenbahn, My Fairy Garden, Lego Millenium Falcon
+Romy, Lego Millenium Falcon, MyToys Holzeisenbahn, Barbie und Ken Geschenkset mit Huendchen, Schleich Mobile Tieraerztin, Barbie Meerjungfrau, PLAYMOBIL Polizei-Einsatzwagen, Play-Doh Verrueckte Haufen
+Leon, Spin Master Monster Jam - Grave Digger, Barbie Meerjungfrau
+Juna, MyToys Holzeisenbahn, Mattel Exklusiv Hot Wheels Doppel-Looping Wettrennen, Piano Matte, Tonies 30 Lieblings-Kinderlieder, Schleich Mobile Tieraerztin, Play-Doh Verrueckte Haufen, Barbie und Ken Geschenkset mit Huendchen, Haarkreide, Spin Master Monster Jam - Grave Digger, My Fairy Garden, Hasbro Kroko Doc, PLAYMOBIL Polizei-Einsatzwagen, Barbie Meerjungfrau, Pop up Pirate
+Noah, Lego Millenium Falcon, Barbie Meerjungfrau, My Fairy Garden
+Theresa, Hasbro Kroko Doc, Barbie und Ken Geschenkset mit Huendchen, Lego Millenium Falcon, Haarkreide, Play-Doh Verrueckte Haufen, Spin Master Monster Jam - Grave Digger, MyToys Puppenhaus mit Garten und Moebel, Piano Matte, Kidisecrets, Lego Das Disney Schloss, MyToys-Collection Puppenwagen Trendy, Barbie Meerjungfrau, Schleich Mobile Tieraerztin
+Luis, Mattel Exklusiv Hot Wheels Doppel-Looping Wettrennen, MyToys-Collection Puppenwagen Trendy, Play-Doh Verrueckte Haufen, MyToys Puppenhaus mit Garten und Moebel, Lego Das Disney Schloss, Barbie und Ken Geschenkset mit Huendchen, My Fairy Garden, Tonies 30 Lieblings-Kinderlieder, Lego Millenium Falcon
+Eva, My Fairy Garden, Lego Millenium Falcon
+Paul, Barbie Meerjungfrau, Tonies 30 Lieblings-Kinderlieder, Lego Millenium Falcon, Spin Master Monster Jam - Grave Digger, Haarkreide, MyToys Holzeisenbahn
+Julia, Barbie und Ken Geschenkset mit Huendchen, Hasbro Kroko Doc, MyToys Puppenhaus mit Garten und Moebel
+Finn, Schleich Mobile Tieraerztin, My Fairy Garden, Tonies 30 Lieblings-Kinderlieder, Mattel Exklusiv Hot Wheels Doppel-Looping Wettrennen, Play-Doh Verrueckte Haufen, MyToys Puppenhaus mit Garten und Moebel, Barbie Meerjungfrau, MyToys Holzeisenbahn, Lego Das Disney Schloss, Spin Master Monster Jam - Grave Digger, Barbie und Ken Geschenkset mit Huendchen, Kidisecrets, Piano Matte
